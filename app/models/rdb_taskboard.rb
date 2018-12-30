@@ -79,7 +79,11 @@ class RdbTaskboard < RdbDashboard
       self.add_group RdbGroup.new("issue-others", :rdb_no_parent, :accept => Proc.new { |issue| issue.parent.nil? and issue.children.empty? })
     end
 
-    self.add_group RdbGroup.new(:all, :rdb_all_issues) if groups.empty?
+    trackers.each do |tracker|
+      self.add_group RdbGroup.new("tracker-#{tracker.id}", tracker.name, :accept => Proc.new {|issue| issue.tracker == tracker })
+    end
+
+    # self.add_group RdbGroup.new(:all, :rdb_all_issues) if groups.empty?
   end
 
 

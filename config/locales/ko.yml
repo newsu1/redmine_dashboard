@@ -47,7 +47,7 @@ ko:
   rdb_legend_warnings: 경고
   rdb_issue_overdue: 기한 지남
   rdb_not_available: N/A
-  rdb_column_done: 완료
+  rdb_column_done: 종료
   rdb_x_issues:
     other: "%{count} 일감"
   rdb_dialog_update_issue_title: 일감 갱신
